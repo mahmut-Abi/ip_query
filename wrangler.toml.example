@@ -1,0 +1,24 @@
+name = "ip-query"
+main = "src/index.ts"
+compatibility_date = "2026-05-04"
+workers_dev = true
+
+# Uncomment and set your custom domain:
+# routes = [
+#   { pattern = "your-domain.com", custom_domain = true }
+# ]
+
+# Create two D1 databases, then paste the IDs below:
+#   wrangler d1 create ip-query-db
+#   wrangler d1 create ip-query-city-db
+[[d1_databases]]
+binding = "DB"
+database_name = "ip-query-db"
+database_id = "your-main-d1-database-id"
+migrations_dir = "migrations"
+
+[[d1_databases]]
+binding = "CITY_DB"
+database_name = "ip-query-city-db"
+database_id = "your-city-d1-database-id"
+migrations_dir = "migrations-city"
